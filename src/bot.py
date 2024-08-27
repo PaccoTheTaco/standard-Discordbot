@@ -20,12 +20,13 @@ from reactionroles.reaction_roles_listener import ReactionRolesListener
 from reactionroles.data_manager import DataManager
 from reminder import setup as setup_reminder
 from umfrage import setup as setup_umfrage
+from logsystem import VoiceLogListener, RoleLogListener, MessageLogListener, ServerLogListener
 
 load_dotenv()
 
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 
-intents = discord.Intents.default()
+intents = discord.Intents.all()
 intents.members = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
@@ -42,24 +43,32 @@ async def setup_reaction_roles(bot):
 
 @bot.event
 async def on_ready():
-    await setup_welcome(bot)
-    await setup_leave(bot)
-    await setup_ticket_system(bot) 
-    setup_github_commands(bot)
-    await setup_kick(bot)
-    await setup_ban(bot)
-    await setup_unban(bot)
-    await setup_timeout(bot)
-    await setup_untimeout(bot)
-    await setup_lock_unlock(bot)
-    await setup_softban(bot)
-    await setup_roles(bot)
-    await setup_tictactoe(bot)
-    await setup_umfrage(bot)
-    await setup_reaction_roles(bot)
-    await setup_reminder(bot)
-    await bot.tree.sync() 
-    print(f'Logged in as {bot.user}')
+    try:
+        await setup_reaction_roles(bot)
+        await setup_welcome(bot)
+        await setup_leave(bot)
+        await setup_ticket_system(bot) 
+        setup_github_commands(bot)
+        await setup_kick(bot)
+        await setup_ban(bot)
+        await setup_unban(bot)
+        await setup_timeout(bot)
+        await setup_untimeout(bot)
+        await setup_lock_unlock(bot)
+        await setup_softban(bot)
+        await setup_roles(bot)
+        await setup_tictactoe(bot)
+        await setup_umfrage(bot)
+        await setup_reaction_roles(bot)
+        await setup_reminder(bot)
+        await bot.add_cog(VoiceLogListener(bot))
+        await bot.add_cog(RoleLogListener(bot))
+        await bot.add_cog(MessageLogListener(bot))
+        await bot.add_cog(ServerLogListener(bot))
+        await bot.tree.sync() 
+        print(f'Logged in as {bot.user}')
+    except Exception as e:
+        print(f"Error in logging in: {e}")
 
 async def main():
     async with bot:
