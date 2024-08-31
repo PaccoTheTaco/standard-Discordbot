@@ -5,12 +5,15 @@ Deutsch:
 Beispiele was der Bot kann: 
 
 Der Bot hat ein eigenes Ticket System:
-[Ticket System](example_pics/tickets.png)
+
+![Ticket System](example_pics/tickets.png)
 
 Der Bot schreibt automatisch in den Channel #log die gelogten Sachen wie z.B. Nachrichten löschen oder editieren:
+
 ![Nachrichten löschen oder editieren](example_pics/log.png)
 
 Ihr könnt auch Tic Tac Toe spielen:
+
 ![Tic Tac Toe](example_pics/tictactoe.png)
 
 Installation für Programmierer: 
@@ -35,12 +38,15 @@ English version:
 Examples of what the bot can do: 
 
 The bot has its own ticket system:
+
 ![ticket system](example_pics/tickets.png)
 
 The bot automatically writes the logged things such as delete or edit messages:
+
 ![delete or edit messages](example_pics/log.png) to the #log channel.
 
 You can also play Tic Tac Toe:
+
 ![Tic Tac Toe](example_pics/tictactoe.png)
 
 Installation for programmers: 
