@@ -41,9 +41,9 @@ The bot has its own ticket system:
 
 ![ticket system](example_pics/tickets.png)
 
-The bot automatically writes the logged things such as delete or edit messages:
+The bot automatically writes the logged things such as delete or edit messages to the #log channel.:
 
-![delete or edit messages](example_pics/log.png) to the #log channel.
+![delete or edit messages](example_pics/log.png) 
 
 You can also play Tic Tac Toe:
 
