@@ -5,7 +5,7 @@ Deutsch:
 Beispiele was der Bot kann: 
 
 Der Bot hat ein eigenes Ticket System:
-![Ticket System](example_pics/tickets.png)
+[Ticket System](example_pics/tickets.png)
 
 Der Bot schreibt automatisch in den Channel #log die gelogten Sachen wie z.B. Nachrichten löschen oder editieren:
 ![Nachrichten löschen oder editieren](example_pics/log.png)
